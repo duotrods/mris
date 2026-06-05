@@ -6,7 +6,10 @@ import DuplicateAlert from './DuplicateAlert'
 import TabNav from './TabNav'
 
 const SITES = ['TR-11', 'TR-12', 'TR-14', 'TR-16', 'B-4', 'B-5']
-const todayStr = () => new Date().toISOString().split('T')[0]
+const todayStr = () => {
+  const d = new Date()
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
+}
 
 export default function EntryForm() {
   const [isPending, startTransition] = useTransition()
