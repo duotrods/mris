@@ -1,0 +1,80 @@
+<h2>App Layout Options</h2>
+<p class="subtitle">How should the two pages (Entry Form + Table View) be organized?</p>
+
+<div class="cards">
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div class="mock-nav" style="font-size:12px; padding:8px 12px; background:#1e293b; color:#94a3b8;">
+        MRIS Validation System &nbsp;|&nbsp;
+        <span style="color:#60a5fa; font-weight:bold;">Entry Form</span> &nbsp;|&nbsp;
+        <span style="color:#94a3b8;">Records Table</span>
+      </div>
+      <div style="padding:16px;">
+        <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:12px; margin-bottom:8px;">
+          <div style="font-size:11px; font-weight:600; color:#64748b; margin-bottom:8px;">NEW ENTRY</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-bottom:6px;">
+            <input class="mock-input" placeholder="For Site ▾" style="font-size:10px; padding:5px 8px;">
+            <input class="mock-input" placeholder="MRIS #" style="font-size:10px; padding:5px 8px;">
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-bottom:8px;">
+            <input class="mock-input" placeholder="# of Liters" style="font-size:10px; padding:5px 8px;">
+            <input class="mock-input" placeholder="Date Issued" style="font-size:10px; padding:5px 8px;">
+          </div>
+          <input class="mock-input" placeholder="Date (today)" style="font-size:10px; padding:5px 8px; width:100%; box-sizing:border-box; margin-bottom:8px;">
+          <button class="mock-button" style="width:100%; font-size:10px;">Submit Entry</button>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Top Nav, Two-Column Form</h3>
+      <p>Navigation bar at top, form fields in a 2-column grid. Clean and compact.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="display:flex; height:130px;">
+        <div class="mock-sidebar" style="font-size:10px; width:90px; padding:8px; background:#1e293b; color:#94a3b8; display:flex; flex-direction:column; gap:8px;">
+          <div style="color:#fff; font-weight:700; font-size:9px; margin-bottom:4px;">MRIS</div>
+          <div style="color:#60a5fa;">📝 Entry</div>
+          <div>📋 Records</div>
+        </div>
+        <div style="flex:1; padding:10px; background:#f8fafc;">
+          <div style="font-size:11px; font-weight:600; color:#64748b; margin-bottom:8px;">New Entry</div>
+          <input class="mock-input" placeholder="For Site ▾" style="font-size:10px; padding:4px 8px; width:100%; box-sizing:border-box; margin-bottom:5px;">
+          <input class="mock-input" placeholder="MRIS #" style="font-size:10px; padding:4px 8px; width:100%; box-sizing:border-box; margin-bottom:5px;">
+          <input class="mock-input" placeholder="# of Liters" style="font-size:10px; padding:4px 8px; width:100%; box-sizing:border-box; margin-bottom:5px;">
+          <button class="mock-button" style="width:100%; font-size:10px; padding:5px;">Submit</button>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Sidebar Nav, Single Column Form</h3>
+      <p>Persistent sidebar navigation, single column form. Clear hierarchy, easy to extend.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="padding:12px; background:#f8fafc;">
+        <div style="text-align:center; margin-bottom:8px;">
+          <div style="font-size:11px; font-weight:700; color:#1e293b;">MRIS Validation System</div>
+          <div style="display:flex; justify-content:center; gap:12px; margin-top:4px;">
+            <span style="font-size:9px; color:#3b82f6; font-weight:600; border-bottom:2px solid #3b82f6; padding-bottom:2px;">Entry Form</span>
+            <span style="font-size:9px; color:#94a3b8;">Records</span>
+          </div>
+        </div>
+        <div style="background:#fff; border:1px solid #e2e8f0; border-radius:8px; padding:10px; max-width:200px; margin:0 auto;">
+          <input class="mock-input" placeholder="For Site ▾" style="font-size:10px; padding:4px 8px; width:100%; box-sizing:border-box; margin-bottom:5px;">
+          <input class="mock-input" placeholder="MRIS #" style="font-size:10px; padding:4px 8px; width:100%; box-sizing:border-box; margin-bottom:5px;">
+          <input class="mock-input" placeholder="# of Liters" style="font-size:10px; padding:4px 8px; width:100%; box-sizing:border-box; margin-bottom:5px;">
+          <button class="mock-button" style="width:100%; font-size:10px; padding:5px; background:#3b82f6; color:#fff;">Submit</button>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Centered Card, Minimal</h3>
+      <p>Centered card layout, no sidebar. Very focused — one task at a time. Tabs to switch pages.</p>
+    </div>
+  </div>
+</div>
