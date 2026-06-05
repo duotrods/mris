@@ -9,11 +9,11 @@ export type SubmitResult =
   | { status: 'duplicate'; existing: MrisEntry; attempted: AttemptedEntry }
 
 export async function submitEntry(formData: FormData): Promise<SubmitResult> {
-  const for_site = (formData.get('for_site') as string).trim()
-  const mris_number = (formData.get('mris_number') as string).trim()
-  const liters = parseFloat(formData.get('liters') as string)
-  const date_issued = formData.get('date_issued') as string
-  const entry_date = formData.get('entry_date') as string
+  const for_site = ((formData.get('for_site') as string) ?? '').trim()
+  const mris_number = ((formData.get('mris_number') as string) ?? '').trim()
+  const liters = parseFloat((formData.get('liters') as string) ?? '')
+  const date_issued = ((formData.get('date_issued') as string) ?? '').trim()
+  const entry_date = ((formData.get('entry_date') as string) ?? '').trim()
 
   if (!for_site || !mris_number || isNaN(liters) || !date_issued || !entry_date) {
     return { status: 'error', message: 'All fields are required.' }
