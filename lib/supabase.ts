@@ -13,4 +13,9 @@ export interface MrisEntry {
   date_issued: string
   entry_date: string
   created_at: string
+  beginning_balance: number | null
+  receiving_date: string | null
+  md_number: string | null
+  receiving_liters: number | null
+  ending_balance: number | null
 }

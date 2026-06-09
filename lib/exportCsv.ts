@@ -16,9 +16,20 @@ export function generateDuplicateCsv(existing: MrisEntry, attempted: AttemptedEn
 }
 
 export function generateAllRecordsCsv(entries: MrisEntry[]): string {
-  const header = 'for_site,mris_number,liters,date_issued,entry_date'
+  const header = 'for_site,beginning_balance,receiving_date,md_number,receiving_liters,mris_number,liters,date_issued,entry_date,ending_balance'
   const rows = entries.map(e =>
-    `${e.for_site},${e.mris_number},${e.liters},${e.date_issued},${e.entry_date}`
+    [
+      e.for_site,
+      e.beginning_balance ?? '',
+      e.receiving_date ?? '',
+      e.md_number ?? '',
+      e.receiving_liters ?? '',
+      e.mris_number,
+      e.liters,
+      e.date_issued,
+      e.entry_date,
+      e.ending_balance ?? '',
+    ].join(',')
   )
   return [header, ...rows].join('\n')
 }

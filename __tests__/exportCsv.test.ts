@@ -9,6 +9,11 @@ const existing: MrisEntry = {
   date_issued: '2026-06-03',
   entry_date: '2026-06-05',
   created_at: '2026-06-05T10:00:00Z',
+  beginning_balance: null,
+  receiving_date: null,
+  md_number: null,
+  receiving_liters: null,
+  ending_balance: null,
 }
 
 const attempted = {
@@ -31,11 +36,11 @@ describe('generateDuplicateCsv', () => {
 describe('generateAllRecordsCsv', () => {
   it('produces header + one row per entry', () => {
     const lines = generateAllRecordsCsv([existing]).split('\n')
-    expect(lines[0]).toBe('for_site,mris_number,liters,date_issued,entry_date')
-    expect(lines[1]).toBe('TR-11,2026-0045,120,2026-06-03,2026-06-05')
+    expect(lines[0]).toBe('for_site,beginning_balance,receiving_date,md_number,receiving_liters,mris_number,liters,date_issued,entry_date,ending_balance')
+    expect(lines[1]).toBe('TR-11,,,,,2026-0045,120,2026-06-03,2026-06-05,')
   })
 
   it('returns only header for empty array', () => {
-    expect(generateAllRecordsCsv([])).toBe('for_site,mris_number,liters,date_issued,entry_date')
+    expect(generateAllRecordsCsv([])).toBe('for_site,beginning_balance,receiving_date,md_number,receiving_liters,mris_number,liters,date_issued,entry_date,ending_balance')
   })
 })

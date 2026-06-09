@@ -5,6 +5,8 @@ const mk = (mris_number: string, entry_date: string): MrisEntry => ({
   id: mris_number, for_site: 'TR-11', mris_number,
   liters: 100, date_issued: '2026-01-01', entry_date,
   created_at: `${entry_date}T10:00:00Z`,
+  beginning_balance: null, receiving_date: null, md_number: null,
+  receiving_liters: null, ending_balance: null,
 })
 
 describe('groupByDate', () => {
